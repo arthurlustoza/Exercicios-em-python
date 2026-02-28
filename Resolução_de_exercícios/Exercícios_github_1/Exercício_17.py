@@ -1,27 +1,26 @@
-"""
-Faça um Programa para uma loja de tintas. O programa deverá pedir o tamanho em metros quadrados da área a ser pintada.
-Considere que a cobertura da tinta é de 1 litro para cada 6 metros quadrados e
-que a tinta é vendida em latas de 18 litros, que custam R$ 80,00 ou em galões de 3,6 litros, que custam R$ 25,00.
-Informe ao usuário as quantidades de tinta a serem compradas e os respectivos preços em 3 situações:
-comprar apenas latas de 18 litros;
-comprar apenas galões de 3,6 litros;
-misturar latas e galões, de forma que o custo seja menor.
-Acrescente 10% de folga e sempre arredonde os valores para cima, isto é, considere latas cheias.
-"""
-
 import math
 
 print("Loja de Tintas!")
-
 tamanho_area_M2 = int(input("Digite o tamanho da área a ser pintada em M2: "))
+litros_usados = (tamanho_area_M2 / 6) * 1.10
 
-litros_usados = tamanho_area_M2 * 6
-
+# Situação 1: apenas latas
 lata_de_tinta = math.ceil(litros_usados / 18)
-
 preco_lata = lata_de_tinta * 80
 
-print(f"Quantidade de litros de tinta: {litros_usados:.1f}")
+# Situação 2: apenas galões
+galao_de_tinta = math.ceil(litros_usados / 3.6)
+preco_galao = galao_de_tinta * 25
+
+# Situação 3: mistura
+latas_misturadas = litros_usados // 18
+litros_restantes = litros_usados % 18
+galoes_misto = math.ceil(litros_restantes / 3.6)
+preco_misto = (latas_misturadas * 80) + (galoes_misto * 25)
+
+print(f"\nQuantidade de litros de tinta: {litros_usados:.1f}")
+print(f"Apenas latas:  {lata_de_tinta} latas → R$ {preco_lata:.2f}")
+print(f"Apenas galões: {galao_de_tinta} galões → R$ {preco_galao:.2f}")
 print(
-    f"Quantidade de latas e preço: {lata_de_tinta} latas de tinta saem por: R$ {preco_lata:.1f}"
+    f"Mistura: {int(latas_misturadas)} latas + {galoes_misto} galões → R$ {preco_misto:.2f}"
 )
