@@ -4,9 +4,11 @@ Faça um Programa que verifique se uma letra digitada é vogal ou consoante.
 
 print("Verificando se e vogal ou consoante")
 
-letra = str(input("Digite a letra desejada: "))
+letra = str(input("Digite a letra desejada: ").lower())
 
-if letra == "a" and "b" and "c" and "d":
+vogal = "aeiou"
+
+if letra in vogal:
     print("Vogal")
 else:
     print("Consoante")
