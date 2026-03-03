@@ -38,7 +38,7 @@ if num_2 < ordem_3:
 if num_3 < ordem_3:
     ordem_3 = num_3
 
-
+# Feito por IA, não entendi está parte, preciso revisar mais!
 if num_1 != ordem_1 and num_1 != ordem_3:
     ordem_2 = num_1
 
