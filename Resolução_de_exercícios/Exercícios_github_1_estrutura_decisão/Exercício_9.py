@@ -29,20 +29,23 @@ if num_3 > ordem_1:
     ordem_1 = num_3
 
 
-# Descobrir o menor númeor
+# Descobrir o menor número
 ordem_3 = num_1
 
 if num_2 < ordem_3:
-    ordem_2 = num_2
+    ordem_3 = num_2
 
 if num_3 < ordem_3:
-    ordem_2 = num_3
+    ordem_3 = num_3
 
 
-ordem_2 = num_1
-
-if ordem_2 > num_2 and ordem_2 < num_3:
+if num_1 != ordem_1 and num_1 != ordem_3:
     ordem_2 = num_1
 
+if num_2 != ordem_1 and num_2 != ordem_3:
+    ordem_2 = num_2
+
+if num_3 != ordem_1 and num_3 != ordem_3:
+    ordem_2 = num_3
 
 print(ordem_1, ordem_2, ordem_3)
