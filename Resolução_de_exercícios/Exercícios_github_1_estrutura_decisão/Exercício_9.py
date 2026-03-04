@@ -33,19 +33,19 @@ if num_3 > ordem_1:
 ordem_3 = num_1
 
 if num_2 < ordem_3:
-    ordem_3 = num_2
-
-if num_3 < ordem_3:
-    ordem_3 = num_3
-
-# Feito por IA, não entendi está parte, preciso revisar mais!
-if num_1 != ordem_1 and num_1 != ordem_3:
-    ordem_2 = num_1
-
-if num_2 != ordem_1 and num_2 != ordem_3:
     ordem_2 = num_2
 
-if num_3 != ordem_1 and num_3 != ordem_3:
+if num_3 < ordem_3:
     ordem_2 = num_3
 
+
+ordem_2 = num_1
+
+if ordem_2 > num_2 and ordem_2 < num_3:
+    ordem_2 = num_1
+
+
 print(ordem_1, ordem_2, ordem_3)
+
+
+# corrigido

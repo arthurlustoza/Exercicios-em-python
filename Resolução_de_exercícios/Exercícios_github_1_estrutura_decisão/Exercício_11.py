@@ -46,10 +46,12 @@ print(f"Salario bruto e de: {salario_bruto:.2f} R$")
 if salario_bruto <= 280:
     salario_com_aumento = salario_bruto * 1.20
     print("Aumento de 20%")
-elif salario_bruto > 280 and salario_bruto <= 700:
+elif salario_bruto <= 700:
     salario_com_aumento = salario_bruto * 1.15
     print("Aumento de 15%")
-elif salario_bruto > 700 and salario_bruto == 1500:
+elif (
+    salario_bruto <= 1500
+):  # <-erros corrigios: Troquei o (== 1500) por (<= 1500) pois caso aja um valor entre 700,01 e 1499,99 caira no else
     salario_com_aumento = salario_bruto * 1.10
     print("Aumento de 10%")
 else:
@@ -60,3 +62,7 @@ print(f"Salario com aumento: {salario_com_aumento:.2f} R$")
 
 aumento = salario_com_aumento - salario_bruto
 print(f"Aumento foi de: {aumento:.2f}")
+
+"""
+Evitar redundancia com os dados, com o uso desnecessario do and!!!
+"""
