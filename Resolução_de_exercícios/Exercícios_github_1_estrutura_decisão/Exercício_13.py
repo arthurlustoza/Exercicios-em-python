@@ -44,5 +44,5 @@ elif dia_da_semana == 6:
     print("SEXTA")
 elif dia_da_semana == 7:
     print("SABADO")
-elif dia_da_semana < 1 or dia_da_semana > 7:
+else:
     print("Número invalido")
